@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="./css/bootstrap.min.css">
+    
+      <script src="" ></script>
+
+   
+      <title>Resultado - Ciclo Vacinal</title>
+    
+</head>
+<body>
+<div>
+	<H3>Resultado - Ciclo Vacinal</H3>
+</div>
+<div>
+<?php
+
+$result = file_get_contents("http://node-container:9001/find");
+$find = json_decode($result);
+
+?>
+
+</div>
+<div>
+	<div class="col-6 container" align="left">
+	<?php foreach($find as $finder): ?>    
+	<label>Nome:  </label>
+	<label id='' ><?php echo $product->Name;?></label>
+	</div>
+	<div class="container-fluid" align="center">
+	    <h5 "col-6 d-flex align-items-center">1ª vacina</h5>
+	    <div class="col-6 d-flex align-items-center">
+	    <label>Data: </label>
+	    <label id='' ><?php echo $product->Date1vac;?></label>
+	    </div>
+	    <div class="col-6 d-flex align-items-center">
+	    <label>Laboratório: </label>
+	    <label id='' ><?php echo $product->Marc1vac;?></label>
+	    </div>
+	    <div class="col-6 d-flex align-items-center">
+	    <label>Local: </label>
+	    <label id='' ><?php echo $product->Loc1vac;?></label>
+	    </div>
+	</div>    
+	<div class="container-fluid" align="center">
+	    <h5 "col-6 d-flex align-items-center">2ª vacina</h5>
+	    <div class="col-6 d-flex align-items-center">
+	    <label>Data: </label>
+	    <label id='' ><?php echo $product->Loc1vac;?></label>
+	    </div>
+	    <div class="col-6 d-flex align-items-center">
+	    <label>Laboratório: </label>
+	    <label id='' ><?php echo $product->Loc1vac;?></label>
+	    </div>
+	    <div class="col-6 d-flex align-items-center">
+	    <label>Local: </label><label id='' ><?php echo $product->Loc2vac;?></label>
+	    </div>
+	</div>
+	<div class="container-fluid" align="center">
+	    <h5 "col-6 d-flex align-items-center">3ª vacina</h5>    
+	    <div class="col-6 d-flex align-items-center">
+	    <label>Data: </label>
+	    <label id='' ><?php echo $product->Date3vac;?></label>
+	    </div>
+	    <div class="col-6 d-flex align-items-center">
+	    <label>Laboratório: </label><label id='' ><?php echo $product->Marc3vac;?></label>
+	    </div>
+	    <div class="col-6 d-flex align-items-center">
+	    <label>Local: </label>
+	    <label id='' ><?php echo $product->Loc3vac;?> </label>
+	    </div>
+	</div>
+	<div "col-6 d-flex align-items-center">
+	<a href="index.html" class="btn-success" id='Reload' >Nova pesquisa</a>
+	</div>
+</div>	
+	<div class="container" align="center">    
+	<div class="col-6 d-flex align-items-center">
+	<label id='NotFound' >Usuário não encontrado, confira os dados e pesquise novamente.</label>
+	</div>
+	</div>
+	
+	
+
+</body>
+
+</html>
